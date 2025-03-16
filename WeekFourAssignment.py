@@ -12,10 +12,14 @@ def modifier(input_file,output_file):
 
     except FileNotFoundError:
         print(f"File '{input_file}' not found.")
+    except PermissionError:
+        print(f"Error: Permission denied. Cannot read '{input_file}' or write to '{output_file}'.")
     except Exception as e:
         print(f"Error: {e}")
 
-input_file = "week4input.txt"
+
+
+input_file = input("Enter the name of the input file: ")
 output_file = "week4output.txt"
 
 modifier(input_file,output_file)
